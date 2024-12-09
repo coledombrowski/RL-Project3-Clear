@@ -1,0 +1,84 @@
+<mujoco model="hockey">
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" rgb1=".1 .2 .3" rgb2=".2 .3 .4" width="300" height="300" mark="none"/>
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2"/>
+  </asset>
+
+  <worldbody>
+
+    <geom name="ground" type="plane" pos="0 0 0" size="1 1 0.1" material="grid"/>
+
+    <body name="player" pos="0 0 0.1">
+      <geom type="cylinder" size="0.05 0.1" rgba="0 0 1 0.5" name="playergeom"/>
+      <joint name="player_x" type="slide" axis="1 0 0"/>
+      <joint name="player_y" type="slide" axis="0 1 0"/>
+    </body>
+
+    <body name="puck_0" pos="0 0 0.03">
+      <freejoint name="puck_joint_0"/>  <geom name="puckgeom" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_1" pos="0.1 0 0.03">
+      <freejoint name="puck_joint_1"/>
+      <geom name="puckgeom_1" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_2" pos="0.2 0 0.03">
+      <freejoint name="puck_joint_2"/>
+      <geom name="puckgeom_2" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_3" pos="0.3 0 0.03">
+      <freejoint name="puck_joint_3"/>
+      <geom name="puckgeom_3" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_4" pos="0.4 0 0.03">
+      <freejoint name="puck_joint_4"/>
+      <geom name="puckgeom_4" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_5" pos="0.5 0 0.03">
+      <freejoint name="puck_joint_5"/>
+      <geom name="puckgeom_5" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_6" pos="0.6 0 0.03">
+      <freejoint name="puck_joint_6"/>
+      <geom name="puckgeom_6" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_7" pos="0.7 0 0.03">
+      <freejoint name="puck_joint_7"/>
+      <geom name="puckgeom_7" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_8" pos="0.8 0 0.03">
+      <freejoint name="puck_joint_8"/>
+      <geom name="puckgeom_8" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_9" pos="0.9 0 0.03">
+      <freejoint name="puck_joint_9"/>
+      <geom name="puckgeom_9" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_10" pos="-0.1 0 0.03">
+      <freejoint name="puck_joint_10"/>
+      <geom name="puckgeom_10" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_11" pos="-0.2 0 0.03">
+      <freejoint name="puck_joint_11"/>
+      <geom name="puckgeom_11" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_12" pos="-0.3 0 0.03">
+      <freejoint name="puck_joint_12"/>
+      <geom name="puckgeom_12" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_13" pos="-0.4 0 0.03">
+      <freejoint name="puck_joint_13"/>
+      <geom name="puckgeom_13" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+    <body name="puck_14" pos="-0.5 0 0.03">
+      <freejoint name="puck_joint_14"/>
+      <geom name="puckgeom_14" type="sphere" size="0.06" rgba="1 0 0 1" mass=".01"/>
+    </body>
+      
+      <camera name="topdown" pos="0 0 3" euler="-1.57 0 0" mode="fixed"/>
+  </worldbody>
+
+  <actuator>
+    <motor name="player_x_motor" joint="player_x" ctrlrange="-50 50"/>
+    <motor name="player_y_motor" joint="player_y" ctrlrange="-50 50"/>
+  </actuator>
+</mujoco>
